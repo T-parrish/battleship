@@ -117,38 +117,3 @@ class Board:
         else:
             raise ValueError(
                 f"Overlap detected at {str(intersection)}")
-
-    
-    # def __validate_ship_overlap(self, ship: PlacedShip) -> bool:
-    #     # if the ship is vertical
-    #     if ship.x1 == ship.x2:
-    #         start = ship.y1
-    #         end = ship.y2
-
-    #         # tail inclusive
-    #         spaces = {(ship.x1, y) for y in range(start, end+1)}
-    #         intersection = self.occupied_spaces.intersection(spaces)
-    #         if len(intersection) == 0:
-    #             return True
-    #         else:
-    #             raise ValueError(
-    #                 f"Overlap detected at {str(intersection)}")
-
-    #     # if the ship is horizontal
-    #     elif ship.y1 == ship.y2:
-    #         start = ship.x1
-    #         end = ship.x2
-
-    #         # tail inclusive
-    #         spaces = {(x, ship.y1) for x in range(start, end+1)}
-    #         intersection = self.occupied_spaces.intersection(spaces)
-    #         if len(intersection) == 0:
-    #             return True
-    #         else:
-    #             raise ValueError(
-    #                 f"Overlap detected at {str(intersection)}")
-
-    #     else:
-    #         # Should be caught by orientation validator, but should still check
-    #         # to make sure that the validators are composable and not tightly coupled
-    #         raise ValueError("Ship must be placed horizontally or vertically")
