@@ -68,7 +68,6 @@ class Board:
                  ]
         return all(valid)
 
-
     def __validate_ship_orientation(self, ship: PlacedShip) -> True:
         if ship.x1 == ship.x2 or ship.y1 == ship.y2:
             return True
@@ -94,7 +93,8 @@ class Board:
 
     def __validate_open_board_space(self, ship: PlacedShip) -> bool:
         if ship.size > self.largest_open_space:
-            raise OutOfSpaceError(f"No room available on board for ship of size {ship.size}")
+            raise OutOfSpaceError(
+                f"No room available on board for ship of size {ship.size}")
         else:
             return True
 
@@ -112,8 +112,9 @@ class Board:
                 reserved_spaces.add((i, j))
 
         intersection = self.occupied_spaces.intersection(reserved_spaces)
+
         if len(intersection) == 0:
-                return True
+            return True
         else:
             raise ValueError(
                 f"Overlap detected at {str(intersection)}")
