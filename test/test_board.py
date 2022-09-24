@@ -42,7 +42,7 @@ class BoardTests(unittest.TestCase):
         self.assertTrue(board.place_ship(ship))
 
         board = Board(4, [])
-        ship = PlacedShip("frigate", 4, 1, 1, 4, 1)
+        ship = PlacedShip("frigate", 4, 4, 2, 4, 5)
         self.assertTrue(board.place_ship(ship))
 
     def test_invalid_boat(self):
@@ -71,13 +71,12 @@ class BoardTests(unittest.TestCase):
         self.assertEqual(str(ctx.exception),
                          "No room available on board for ship of size 2")
 
-
     def test_valid_initial_setup(self):
         ships = [
             PlacedShip("Destroyer", 2, 1, 1, 1, 2),
-            PlacedShip("Carrier", 5, 2, 1, 2, 6),
+            PlacedShip("Carrier", 5, 4, 1, 4, 5),
             PlacedShip("Cruiser", 3, 6, 5, 8, 5),
             PlacedShip("Submarine", 3, 6, 8, 8, 8),
-            PlacedShip("BattleShip", 4, 4, 1, 4, 4)
+            PlacedShip("BattleShip", 4, 2, 3, 2, 6)
         ]
         board = Board(8, ships)
