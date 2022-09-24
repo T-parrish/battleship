@@ -12,9 +12,10 @@ The src package contains the Board Type on which simulations are run, as well as
 The test package contains unit tests that to ensure that the applied validation logic is working as intended. Unit tests can be run with `python -m unittest discover` from the project root
 
 ## Future work:
-- Add arg_parse to support configuring and running simulations from the command line
+- Add arg_parse to support configuring and running simulations from the command line + suppressing logs below / above a certain threshold
 - Reconfigure Board to keep track of placed boat dimensions so we can know if a HIT causes the target to sink
 - Tests for targeting + firing bombs so we can more easily swap out / test different Targeting Agents
 - Better Agents for ship placement + targeting
 - Better docstrings for integration with tools like Sphinx
+
 
