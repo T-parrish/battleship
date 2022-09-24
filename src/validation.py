@@ -61,11 +61,11 @@ class GameStateValidator(Generic[S, B]):
 
     def __validate_ship_overlap(self, ship: S, board: B) -> bool:
         # It would be nice to have a method on the Ship object to
-        # calculate + store reserved spaces to avoid recomputing 
+        # calculate + store reserved spaces to avoid recomputing
         reserved_spaces = set()
-        for i in range(ship.x1, ship.x2 + 1):
-            for j in range(ship.y1, ship.y2 + 1):
-                reserved_spaces.add((i, j))
+        for y in range(ship.y1, ship.y2 + 1):
+            for x in range(ship.x1, ship.x2 + 1):
+                reserved_spaces.add((x, y))
 
         if len(reserved_spaces) > ship.size:
             raise InvalidShipError(
